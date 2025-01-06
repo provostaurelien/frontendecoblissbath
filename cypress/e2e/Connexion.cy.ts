@@ -1,15 +1,15 @@
 describe('Connexion utilisateur', () => {
   it('Affichage de la page', () => {
-    cy.visit('http://localhost:8080')
-  })
+    cy.visit('http://localhost:8080');
+  });
 
   it('Cliquer sur "Connexion"', () => {
-    cy.visit('http://localhost:8080')
+    cy.visit('http://localhost:8080');
 
-    cy.contains('Connexion').click()
+    cy.contains('Connexion').click();
 
-    cy.url().should('include', '/login')
-  })
+    cy.url().should('include', '/login');
+  });
 
   it('Saisie des champs et connexion', () => {
     // Accéder à la page de connexion
@@ -35,5 +35,4 @@ describe('Connexion utilisateur', () => {
     // Vérifie que "Mon panier" est présent dans la barre de navigation
     cy.get('nav').contains('Mon panier').should('be.visible');
   });
-
-})
+});
