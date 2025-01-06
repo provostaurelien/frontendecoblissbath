@@ -1,37 +1,38 @@
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+Cypress.Commands.add('login', (username: string, password: string) => {
+    cy.visit('http://localhost:8080/#/login');
+  
+    // Saisie des identifiants
+    cy.get('input[id="username"]').type(username);
+    cy.get('input[id="password"]').type(password);
+  
+    // Clique sur "Se connecter"
+    cy.get('[data-cy="login-submit"]').click();
+  
+    // Vérifie que la connexion est réussie
+    cy.url().should('eq', 'http://localhost:8080/#/');
+    cy.get('nav').contains('Déconnexion').should('be.visible');
+  });
+
+  Cypress.Commands.add('fetchProducts', () => {
+    return cy.request("GET", "http://localhost:8081/products").then((response) => {
+      expect(response.status).to.eq(200);
+      const products = response.body;
+  
+      // Trouver un produit avec stock positif
+      const positiveStockProduct = products.find((product: Product) => product.availableStock > 0);
+      expect(positiveStockProduct).to.exist;
+  
+      // Trouver un produit avec stock nul ou négatif
+      const negativeStockProduct = products.find((product: Product) => product.availableStock <= 0);
+      expect(negativeStockProduct).to.exist;
+  
+      // Retourner les données extraites
+      return {
+        positiveStockId: positiveStockProduct.id,
+        positiveStockName: positiveStockProduct.name,
+        negativeStockId: negativeStockProduct.id,
+        negativeStockName: negativeStockProduct.name,
+      };
+      
+    });
+  });

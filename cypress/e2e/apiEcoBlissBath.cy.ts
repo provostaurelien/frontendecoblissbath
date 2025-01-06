@@ -41,7 +41,6 @@ context("POST /login", function () {
 
 
 
-// Ajout de produit en stock et hors stock
 
 // Définition de l'interface pour un produit
 interface Product {
@@ -58,26 +57,12 @@ context("GET /products", () => {
   negativeStockName : string;
 
   it("Récupération d'un produit avec et sans stock", () => {
-    cy.request("GET", "http://localhost:8081/products").then((response) => {
-      // Vérifier le statut de la réponse
-      expect(response.status).to.eq(200);
-
-      // Extraire les produits depuis la réponse
-      const products = response.body;
-
-      // Trouver un produit avec stock positif
-      const positiveStockProduct = products.find((product: Product) => product.availableStock > 0);  // Typage explicite du paramètre 'product
-      expect(positiveStockProduct).to.exist; // Vérifier qu'il existe
-      positiveStockId = positiveStockProduct.id;
-      positiveStockName = positiveStockProduct.name;
-
-      // Trouver un produit avec stock nul ou négatif
-      const negativeStockProduct = products.find((product: Product) => product.availableStock <= 0);
-      expect(negativeStockProduct).to.exist; // Vérifier qu'il existe
-      negativeStockId = negativeStockProduct.id;
-      negativeStockName = negativeStockProduct.name;
-
-
+    cy.fetchProducts().then((products) => {
+      // Extraire les données retournées par la commande
+      positiveStockId = products.positiveStockId;
+      positiveStockName = products.positiveStockName;
+      negativeStockId = products.negativeStockId;
+      negativeStockName = products.negativeStockName;
     });
   });
 
