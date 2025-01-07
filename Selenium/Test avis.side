@@ -1,0 +1,211 @@
+{
+  "id": "2ef3130d-3126-40e7-9585-53ac041743ef",
+  "version": "2.0",
+  "name": "Test avis",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "4307467f-a243-48fa-b4eb-208bc3f4aff2",
+    "name": "Test avis",
+    "commands": [{
+      "id": "e96b6d56-f740-4675-9ade-73461487062b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83bdbbf2-f4f2-4419-a8f9-659215a51d8e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1240x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f39184e8-25f7-4940-b14b-f6da0632f7e2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Connexion",
+      "targets": [
+        ["linkText=Connexion", "linkText"],
+        ["css=.navigation:nth-child(3) li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Connexion')]", "xpath:link"],
+        ["xpath=//header[@id='main-header']/nav[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#/login')]", "xpath:href"],
+        ["xpath=//nav[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Connexion')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf4dac47-0a30-4b0d-a49c-e8de006f884b",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "790b051b-15a5-4163-b3b0-8b9ea85c24e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test2@test.fr"
+    }, {
+      "id": "838145a0-e83c-42e8-a062-2022e62da1a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01ce6415-4458-4d4d-827b-36515c907015",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "testtest"
+    }, {
+      "id": "5c37f9c3-adb4-48c3-8909-64c214a289e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Se connecter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69323e6a-f7e1-4bb6-8617-68d9d9423d7f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Avis",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc8b1174-20a0-4fcf-8310-b919f6b016b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > img:nth-child(3)",
+      "targets": [
+        ["css=div:nth-child(3) > img:nth-child(3)", "css:finder"],
+        ["xpath=(//img[@alt='Étoile'])[3]", "xpath:img"],
+        ["xpath=//img[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c0b6124-8cb4-4be8-adcc-65cf5efe4221",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de1dedbf-c438-4eb1-85d4-dbf858d983ef",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "avis de test"
+    }, {
+      "id": "7747129a-de65-4451-a2b6-9ac2a635867d",
+      "comment": "",
+      "command": "click",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//input[@id='comment']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3e7a1dd-698b-451c-a8fe-f9257751bb23",
+      "comment": "",
+      "command": "type",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//input[@id='comment']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Je laisse un commentaire"
+    }, {
+      "id": "c37338bc-672a-4d20-97c8-60d995c16edb",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Publier')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0354880b-499b-46fc-a065-adc470bdad9d",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.review-section:nth-child(2) h2",
+      "targets": [
+        ["css=.review-section:nth-child(2) h2", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'test - avis de test')]", "xpath:innerText"]
+      ],
+      "value": "test - avis de test"
+    }, {
+      "id": "05e0aa94-e503-450c-9680-02fc95706a47",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Déconnexion",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d0d7747-6bd4-4142-94c1-9a77ba455686",
+      "comment": "",
+      "command": "close",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8f8d7f4b-578b-4730-8870-09660cd3b8a0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4307467f-a243-48fa-b4eb-208bc3f4aff2"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
