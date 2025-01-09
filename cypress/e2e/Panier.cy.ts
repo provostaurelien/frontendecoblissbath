@@ -111,10 +111,10 @@ describe('Panier', () => {
       cy.get('input[data-cy="detail-product-quantity"]').clear();
       // Saisie d'une donnée négative
       cy.get('input[data-cy="detail-product-quantity"]').type('-4');
-      // Vérification que la valeur est mise à 0
+      // Vérification que la valeur est mise à 1
       cy.get('input[data-cy="detail-product-quantity"]').should(
         'have.value',
-        '0'
+        '1'
       );
     });
     // Vérification des limites supérieures à 20
@@ -124,7 +124,7 @@ describe('Panier', () => {
       cy.get('input[data-cy="detail-product-quantity"]').clear();
       // Saisie d'une donnée négative
       cy.get('input[data-cy="detail-product-quantity"]').type('25');
-      // Vérification que la valeur est mise à 0
+      // Vérification que la valeur est mise à 20
       cy.get('input[data-cy="detail-product-quantity"]').should(
         'have.value',
         '20'
