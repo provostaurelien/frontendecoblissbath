@@ -1,27 +1,19 @@
 # EcoBlissBath
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## Description
 
-## Development server
+Code front end du site de vente en ligne de produits de beauté naturel
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Specifications
 
-## Code scaffolding
+[Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.  [node.js](https://nodejs.org/dist/v22.13.0/node-v22.13.0-x64.msi)  version 22.13.0. [npm](https://github.com/npm) version 10.9.2. [cypress](https://github.com/cypress-io/cypress) version 13.17.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Exécution des tests cypress
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Téléchager ou cloner le dépôt
+2. Depuis un terminal ouvert dans le dossier du projet, lancer la commande : `sudo docker-compose up --build`
+3. vérifier que [le site](http://localhost:8080) se lance correctement
+4. Depuis un terminal ouvert dans le dossier **frontend** du projet :
+* lancer la commande : `npx cypress run --browser chrome` pour le test sous _chrome_
+* lancer la commande : `npx cypress run --browser firefox` pour le test sous _firefox_
+* lancer la commande : `npx cypress run --browser edge` pour le test sous _edge_
